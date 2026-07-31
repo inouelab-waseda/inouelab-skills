@@ -1,0 +1,31 @@
+# レビュー対象として持ち込まれた発表資料
+#
+# 共有リポジトリなので、個人名入りの未発表資料が誤って push されるのを防ぐ。
+# 方針資料など、意図して置くものだけ `git add -f <file>` で追加する。
+*.pdf
+*.ppt
+*.pptx
+*.key
+*.odp
+
+# レビュー用の作業ディレクトリ。スライドやレンダリング結果はここに置く
+materials/
+tmp/
+
+# エージェントのローカル設定
+.claude/settings.local.json
+
+# install.py がリポジトリ単位のプロバイダ向けに生成するもの
+# （--dest でこのリポジトリを指した場合に出る）
+.github/prompts/
+.cursor/rules/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# OS・エディタ
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
