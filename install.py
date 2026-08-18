@@ -141,7 +141,9 @@ def _claude(s, dest):
 
 
 def _codex(s, dest):
-    return HOME / ".codex" / "prompts" / f"{s.name}.md", body(s)
+    return HOME / ".agents" / "skills" / s.name / "SKILL.md", (
+        f"---\nname: {s.name}\ndescription: {yaml_squote(s.description)}\n---\n\n{body(s)}"
+    )
 
 
 def _copilot(s, dest):
@@ -165,7 +167,7 @@ def _gemini(s, dest):
 
 PROVIDERS = {
     "claude":  ("Claude Code",      "~/.claude/skills/<name>/SKILL.md",           _claude),
-    "codex":   ("OpenAI Codex CLI", "~/.codex/prompts/<name>.md",                 _codex),
+    "codex":   ("OpenAI Codex",     "~/.agents/skills/<name>/SKILL.md",          _codex),
     "copilot": ("GitHub Copilot",   "<dest>/.github/prompts/<name>.prompt.md",    _copilot),
     "cursor":  ("Cursor",           "<dest>/.cursor/rules/<name>.mdc",            _cursor),
     "gemini":  ("Gemini CLI",       "~/.gemini/commands/<name>.toml",             _gemini),
