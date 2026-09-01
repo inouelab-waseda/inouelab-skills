@@ -9,6 +9,7 @@
 ## スキル一覧
 
 - [slide-review](slide-review/)
+- [teaching-mode](teaching-mode/)
 
 ## はじめて使う人へ
 
