@@ -9,6 +9,7 @@
 ## スキル一覧
 
 - [slide-review](slide-review/)
+- [block-review](block-review/)
 
 ## はじめて使う人へ
 
